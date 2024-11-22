@@ -12,12 +12,15 @@ import acm.util.*;
 import java.awt.*;
 
 public class Hangman extends ConsoleProgram {
+	
+	private static final int GUESSES = 8;
 
 	private static String word;
 	private static StringBuilder userGuess = new StringBuilder();
 	private static HangmanLexicon lexicon = new HangmanLexicon();
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
-    public void run() {
+    private static int guessesLeft = GUESSES;
+	public void run() {
     	initGame();
 	}
     
