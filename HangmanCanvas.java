@@ -38,7 +38,12 @@ public class HangmanCanvas extends GCanvas {
 	public void noteIncorrectGuess(char letter) {
 		/* You fill this in */
 	}
-	
+	private void drawHead(){
+		double headX = getWidth() / 2 - HEAD_RADIUS;
+		double headY = getHeight() / 2 - OFFSET_Y - BODY_LENGTH - HEAD_RADIUS * 2;
+		head = new GOval(HEAD_RADIUS * 2, HEAD_RADIUS * 2);
+		add(head, headX, headY);
+	}
 	private void drawBody(){
 		double bodyX = getWidth() / 2;
 		double bodyY = getHeight() / 2 - OFFSET_Y - BODY_LENGTH;
