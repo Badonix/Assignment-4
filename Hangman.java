@@ -43,6 +43,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private void tryLetter(char guess){
 		if(word.indexOf(Character.toUpperCase(guess)) != -1){
+			println("That guess is correct");
 			fillTheWord(guess);
 		}else{
 			println("There are no " + guess + "'s in the word");
