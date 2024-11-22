@@ -35,7 +35,7 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void drawBody(){
 		double bodyX = getWidth() / 2;
-		double bodyY = 
+		double bodyY = getHeight() / 2 - OFFSET_Y;
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
