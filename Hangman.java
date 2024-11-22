@@ -99,7 +99,7 @@ public class Hangman extends ConsoleProgram {
     
     private void initUserGuess(){
     	for(int i = 0; i < word.length(); i++){
-    		userGuess.append("_");
+    		userGuess.append("-");
     	}
     }
 
