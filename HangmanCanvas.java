@@ -88,10 +88,10 @@ public class HangmanCanvas extends GCanvas {
 		double footY = legY + LEG_LENGTH;
 		GLine foot = new GLine(footX, footY, footX - FOOT_LENGTH, footY);
 		
-		leftLeg.add(hip);
-		leftLeg.add(leg);
-		leftLeg.add(foot);
-		add(leftLeg);
+		rightLeg.add(hip);
+		rightLeg.add(leg);
+		rightLeg.add(foot);
+		add(rightLeg);
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
