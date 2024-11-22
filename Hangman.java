@@ -36,9 +36,14 @@ public class Hangman extends ConsoleProgram {
 		
 	}
 	
-	private boolean validateInput(String input){
-		if(input.length() > 1){
+	private boolean validateInput(char input){
+		if(guessedLetters.contains(input)){
+			println("Letter is already used");
 			return false;
+		}
+		if(!Character.isLetter(input)){
+			println("Letter is not valid");
+			return false
 		}
 		return true;
 		
