@@ -51,6 +51,12 @@ public class HangmanCanvas extends GCanvas {
 		body = new GLine(bodyX, bodyY, bodyX, bodyY + BODY_LENGTH);
 		add(body);
 	}
+	private void drawLeftLeg(){
+		double legX = getWidth() / 2 - HIP_WIDTH;
+		double legY = getHeight() / 2 - OFFSET_Y;
+		body = new GLine(legX, legY, getWidth()/2, legY + BODY_LENGTH);
+		add(body);
+	}
 
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
