@@ -22,6 +22,7 @@ public class HangmanCanvas extends GCanvas {
 		drawHead();
 		drawLeftLeg();
 		drawRightLeg();
+		drawLeftHand
 	}
 
 	/**
