@@ -35,6 +35,7 @@ public class Hangman extends ConsoleProgram {
 		println("Welcome to Hangman!");
 		initUserGuess();
 		println("The word now looks like this: " + userGuess);
+		println("You have " + guessesLeft + " guesses left");
     }
     
     private void initUserGuess(){
