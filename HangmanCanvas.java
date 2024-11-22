@@ -19,6 +19,7 @@ public class HangmanCanvas extends GCanvas {
 	public void reset() {
 		drawBody();
 		drawHead();
+		drawLeftLeg();
 	}
 
 /**
