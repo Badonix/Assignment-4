@@ -42,10 +42,13 @@ public class Hangman extends ConsoleProgram {
 		if(input.)
 		
 	}
-	private char readCharacter() {
+	private char readUserInput() {
 		String text = "";
 		while (text.length() != 1) {
 			text = readLine("Your guess: ");
+			if(text.length() != 1){
+				println("Enter single character");
+			}
 		}
 		return text.charAt(0);
 	}
