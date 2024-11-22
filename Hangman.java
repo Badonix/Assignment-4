@@ -32,6 +32,9 @@ public class Hangman extends ConsoleProgram {
 	
 	private void play(){
 		char currentGuess = readUserInput();
+		while(!validateInput(currentGuess)){
+			currentGuess = readUserInput();
+		};
 		println(currentGuess);
 		
 	}
@@ -43,7 +46,7 @@ public class Hangman extends ConsoleProgram {
 		}
 		if(!Character.isLetter(input)){
 			println("Letter is not valid");
-			return false
+			return false;
 		}
 		return true;
 		
