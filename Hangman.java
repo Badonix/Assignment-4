@@ -33,6 +33,9 @@ public class Hangman extends ConsoleProgram {
     			break;
     		}
     	}
+    	if(guessesLeft == 0){
+    		handleLoss();
+    	}
    	}
 	
 	private void play(){
