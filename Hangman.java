@@ -37,14 +37,22 @@ public class Hangman extends ConsoleProgram {
 			currentGuess = readUserInput();
 		
 		};
-		fillTheWord(currentGuess);		
+		tryLetter(currentGuess);		
 	}
 	
-	private void fillTheWord(char guess){
+	private void tryLetter(char guess){
 		if(word.indexOf(Character.toUpperCase(guess)) != -1){
-			println("GOOD GUESS");
+			fillTheWord(guess);
 		}else{
 			guessesLeft--;
+		}
+	}
+	private void fillTheWord(char guess){
+		for(int i = 0; i < word.length(); i++){
+			// Because of spaces each index of word => 2*index of userGuess
+			if(word.charAt(i) == guess){
+				
+			}
 		}
 	}
 
