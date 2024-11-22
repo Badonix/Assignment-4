@@ -14,7 +14,7 @@ import java.awt.*;
 public class Hangman extends ConsoleProgram {
 
 	private static String word;
-	private static StringBuilder userGuess;
+	private static StringBuilder userGuess = "";
 	private static HangmanLexicon lexicon = new HangmanLexicon();
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
     public void run() {
