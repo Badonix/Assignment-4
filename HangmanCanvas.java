@@ -23,6 +23,7 @@ public class HangmanCanvas extends GCanvas {
 		drawLeftLeg();
 		drawRightLeg();
 		drawLeftHand();
+		drawRightHand();
 	}
 
 	/**
@@ -70,6 +71,19 @@ public class HangmanCanvas extends GCanvas {
 		leftHand.add(hand);
 		leftHand.add(lowerArm);
 		add(leftHand);
+	}
+	private void drawRightHand(){
+		double handX = getWidth() / 2 - UPPER_ARM_LENGTH;
+		double handY = getHeight() / 2 - OFFSET_Y - BODY_LENGTH + ARM_OFFSET_FROM_HEAD;
+		GLine hand = new GLine(handX, handY, getWidth() / 2, handY);
+		
+		double lowerArmX = handX;
+		double lowerArmY = handY;
+		GLine lowerArm = new GLine(lowerArmX, lowerArmY, lowerArmX, lowerArmY + LOWER_ARM_LENGTH);
+
+		rightHand.add(hand);
+		rightHand.add(lowerArm);
+		add(rightHand);
 	}
 
 	private void drawLeftLeg() {
