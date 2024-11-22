@@ -36,9 +36,7 @@ public class Hangman extends ConsoleProgram {
 			currentGuess = readUserInput();
 		
 		};
-		fillTheWord(currentGuess);
-		
-		
+		fillTheWord(currentGuess);		
 	}
 	
 	private void fillTheWord(char guess){
