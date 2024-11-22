@@ -28,8 +28,8 @@ public class Hangman extends ConsoleProgram {
     }
     
     private void initGame(){
+    	chooseRandomWord();
 		println("Welcome to Hangman!");
-		chooseRandomWord();
     }
 
 }
