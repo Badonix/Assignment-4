@@ -34,11 +34,19 @@ public class Hangman extends ConsoleProgram {
 		char currentGuess = readUserInput();
 		while(!validateInput(currentGuess)){
 			currentGuess = readUserInput();
-		};
 		
+		};
+		fillTheWord(currentGuess);
 		
 		
 	}
+	
+	private void fillTheWord(char guess){
+		if(word.indexOf(guess) != -1){
+			println("GOOD GUESS");
+		}
+	}
+	
 	
 	private boolean validateInput(char input){
 		if(guessedLetters.contains(input)){
@@ -64,12 +72,7 @@ public class Hangman extends ConsoleProgram {
 		return text.charAt(0);
 	}
 	
-	private void fillTheWord(char guess){
-		if(word.indexOf(guess) != -1){
-			println("GOOD GUESS");
-		}
-	}
-	
+
     private void chooseRandomWord(){
     	int wordsCount = lexicon.getWordCount();
     	int randomNum = rgen.nextInt(wordsCount); 
