@@ -14,7 +14,7 @@ import java.awt.*;
 public class Hangman extends ConsoleProgram {
 
     public void run() {
-		println("HI");
+		println("Welcome to Hangman!");
 	}
 
 }
