@@ -47,6 +47,7 @@ public class Hangman extends ConsoleProgram {
 		if(userGuess.equals(word)){
 			handleWin();
 		}
+		println(userGuess, word);
 		println("The word now looks like this: " + userGuess);
 		println("You have " + guessesLeft + " guesses left");
 		
