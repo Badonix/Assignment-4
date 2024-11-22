@@ -25,7 +25,9 @@ public class Hangman extends ConsoleProgram {
     
     private void chooseRandomWord(){
     	int wordsCount = lexicon.getWordCount();
-    	int randomNum = rgen.nextInt(wordsCount - 1); 
+    	
+    	// It will return random number from 0 to wordsCount - 1
+    	int randomNum = rgen.nextInt(wordsCount); 
     	println(randomNum);
     	word = lexicon.getWord(randomNum);
     }
