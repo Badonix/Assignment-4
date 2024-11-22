@@ -31,7 +31,8 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void play(){
-		String currentGuess = readLine("Your guess: ");
+		char currentGuess = readUserInput();
+		println(currentGuess);
 		
 	}
 	
@@ -39,7 +40,6 @@ public class Hangman extends ConsoleProgram {
 		if(input.length() > 1){
 			return false;
 		}
-		if(input.)
 		
 	}
 	private char readUserInput() {
