@@ -57,7 +57,12 @@ public class HangmanCanvas extends GCanvas {
 		double hipY = getHeight() / 2 - OFFSET_Y;
 		GLine hip = new GLine(hipX, hipY, getWidth()/2, hipY);
 		
+		double legX = hipX;
+		double legY = hipY;
+		GLine leg = new GLine(legX, legY, legX, legY+LEG_LENGTH);
+		
 		leftLeg.add(hip);
+		leftLeg.add(leg);
 		add(leftLeg);
 	}
 
