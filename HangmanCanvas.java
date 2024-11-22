@@ -12,8 +12,8 @@ public class HangmanCanvas extends GCanvas {
 	private static GLine leftHand;
 	private static GLine rightHand;
 	private static GOval head;
-	private static GLine leftLeg;
-	private static GLine rightLeg;
+	private static GCompound leftLeg;
+	private static GCompound rightLeg;
 
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
@@ -53,10 +53,11 @@ public class HangmanCanvas extends GCanvas {
 		add(body);
 	}
 	private void drawLeftLeg(){
-		double legX = getWidth() / 2 - HIP_WIDTH;
-		double legY = getHeight() / 2 - OFFSET_Y;
-		body = new GLine(legX, legY, getWidth()/2, legY);
-		add(body);
+		double hipX = getWidth() / 2 - HIP_WIDTH;
+		double hipY = getHeight() / 2 - OFFSET_Y;
+		GLine hip = new GLine(hipX, hipY, getWidth()/2, hipY);
+
+		add(leftLeg);
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
