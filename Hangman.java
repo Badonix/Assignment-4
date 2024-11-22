@@ -50,7 +50,7 @@ public class Hangman extends ConsoleProgram {
 		println("You win.");
 	}
 	private void handleLoss(){
-		println("You are completly hung.")
+		println("You are completly hung.");
 		println("The word was: " + word);
 		println("You lose.");
 	}
