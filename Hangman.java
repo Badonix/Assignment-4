@@ -42,6 +42,8 @@ public class Hangman extends ConsoleProgram {
 	private void fillTheWord(char guess){
 		if(word.indexOf(Character.toUpperCase(guess)) != -1){
 			println("GOOD GUESS");
+		}else{
+			guesses--;
 		}
 	}
 	
