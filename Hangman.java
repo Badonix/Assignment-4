@@ -123,6 +123,7 @@ public class Hangman extends ConsoleProgram {
 	}
 
 	private void initGame() {
+		canvas.reset();
 		chooseRandomWord();
 		println("Welcome to Hangman!");
 		initUserGuess();
