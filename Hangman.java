@@ -74,7 +74,7 @@ public class Hangman extends ConsoleProgram {
 	private void fillTheWord(char guess){
 		for(int i = 0; i < word.length(); i++){
 			if(word.charAt(i) == Character.toUpperCase(guess)){
-				userGuess.setCharAt(i, guess);
+				userGuess.setCharAt(i, Character.toUpperCase(guess));
 			}
 		}
 	}
