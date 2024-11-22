@@ -18,18 +18,18 @@ public class Hangman extends ConsoleProgram {
 	private static HangmanLexicon lexicon = new HangmanLexicon();
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
     public void run() {
-		println("Welcome to Hangman!");
-		chooseRandomWord();
-		println("Current word is " + word);
+    	initGame();
 	}
     
     private void chooseRandomWord(){
     	int wordsCount = lexicon.getWordCount();
-    	
-    	// It will return random number from 0 to wordsCount - 1
     	int randomNum = rgen.nextInt(wordsCount); 
-    	println(randomNum);
     	word = lexicon.getWord(randomNum);
+    }
+    
+    private void initGame(){
+		println("Welcome to Hangman!");
+		chooseRandomWord();
     }
 
 }
