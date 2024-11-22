@@ -43,7 +43,7 @@ public class Hangman extends ConsoleProgram {
 		if(word.indexOf(Character.toUpperCase(guess)) != -1){
 			println("GOOD GUESS");
 		}else{
-			guesses--;
+			guessesLeft--;
 		}
 	}
 	
