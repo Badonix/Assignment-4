@@ -25,6 +25,7 @@ public class Hangman extends ConsoleProgram {
     private static int guessesLeft = GUESSES;
 	public void run() {
     	initGame();
+    	println(word);
     	while(guessesLeft > 0){
     		play();
     	}
