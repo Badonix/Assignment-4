@@ -44,7 +44,7 @@ public class Hangman extends ConsoleProgram {
 			currentGuess = readUserInput();
 		};
 		tryLetter(currentGuess);
-		if(userGuess.equals(word)){
+		if(userGuess.toString().equals(word)){
 			handleWin();
 			println("I WON");
 		}
