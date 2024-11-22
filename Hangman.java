@@ -36,7 +36,6 @@ public class Hangman extends ConsoleProgram {
 		char currentGuess = readUserInput();
 		while(!validateInput(currentGuess)){
 			currentGuess = readUserInput();
-		
 		};
 		tryLetter(currentGuess);
 		println("The word now looks like this: " + userGuess);
@@ -53,7 +52,7 @@ public class Hangman extends ConsoleProgram {
 		for(int i = 0; i < word.length(); i++){
 			// Because of spaces each index of word => 2*index of userGuess
 			if(word.charAt(i) == Character.toUpperCase(guess)){
-				userGuess.setCharAt(2*i, guess);
+				userGuess.setCharAt(i, guess);
 			}
 		}
 	}
@@ -101,9 +100,6 @@ public class Hangman extends ConsoleProgram {
     private void initUserGuess(){
     	for(int i = 0; i < word.length(); i++){
     		userGuess.append("_");
-    		if(i != word.length() - 1){
-    			userGuess.append(" ");
-    		}
     	}
     }
 
