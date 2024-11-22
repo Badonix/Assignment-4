@@ -39,6 +39,7 @@ public class Hangman extends ConsoleProgram {
 		};
 		tryLetter(currentGuess);
 		println("The word now looks like this: " + userGuess);
+		println("You have " + guessesLeft + " guesses left");
 	}
 	
 	private void tryLetter(char guess){
