@@ -43,13 +43,13 @@ public class Hangman extends ConsoleProgram {
 		tryLetter(currentGuess);
 		if(userGuess.equals(word)){
 			handleWin();
-			break;
 		}
 		println("The word now looks like this: " + userGuess);
 		println("You have " + guessesLeft + " guesses left");
 		
 	}
 	private void handleWin(){
+		hasWon = true;
 		println("You guessed the word: " + word);
 		println("You win.");
 	}
