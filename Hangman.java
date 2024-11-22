@@ -20,7 +20,7 @@ public class Hangman extends ConsoleProgram {
     public void run() {
 		println("Welcome to Hangman!");
 		chooseRandomWord();
-		println("Current word is", word)
+		println("Current word is", word);
 	}
     
     private void chooseRandomWord(){
