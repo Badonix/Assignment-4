@@ -32,8 +32,23 @@ public class Hangman extends ConsoleProgram {
 	
 	private void play(){
 		String currentGuess = readLine("Your guess: ");
+		
 	}
 	
+	private boolean validateInput(String input){
+		if(input.length() > 1){
+			return false;
+		}
+		if(input.)
+		
+	}
+	private char readCharacter() {
+		String text = "";
+		while (text.length() != 1) {
+			text = readLine("Your guess: ");
+		}
+		return text.charAt(0);
+	}
 	
 	
     
