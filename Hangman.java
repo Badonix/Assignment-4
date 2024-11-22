@@ -47,7 +47,7 @@ public class Hangman extends ConsoleProgram {
 			guessesLeft--;
 		}
 	}
-	
+
 	
 	private boolean validateInput(char input){
 		if(guessedLetters.contains(input)){
