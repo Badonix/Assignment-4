@@ -89,7 +89,7 @@ public class Hangman extends ConsoleProgram {
 			println("Letter is not valid");
 			return false;
 		}
-		guessedLetters.add(Character.toUpperCase(input)input);
+		guessedLetters.add(Character.toUpperCase(input));
 		return true;
 	}
 	
