@@ -10,8 +10,8 @@ import acm.graphics.*;
 public class HangmanCanvas extends GCanvas {
 
 	private static GLine body;
-	private static GLine leftHand;
-	private static GLine rightHand;
+	private static GCompound leftHand;
+	private static GCompound rightHand;
 	private static GOval head;
 	private static GCompound leftLeg = new GCompound();
 	private static GCompound rightLeg = new GCompound();
