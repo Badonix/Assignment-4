@@ -30,11 +30,11 @@ public class Hangman extends ConsoleProgram {
     private void initGame(){
     	chooseRandomWord();
 		println("Welcome to Hangman!");
-		formatUserGuess();
+		initUserGuess();
 		println("The word now looks like this: " + userGuess);
     }
     
-    private void formatUserGuess(){
+    private void initUserGuess(){
     	for(int i = 0; i < word.length(); i++){
     		userGuess.append("_");
     		if(i != word.length() - 1){
