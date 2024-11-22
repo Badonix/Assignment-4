@@ -72,6 +72,27 @@ public class HangmanCanvas extends GCanvas {
 		leftLeg.add(foot);
 		add(leftLeg);
 	}
+	
+	private void drawRightLeg(){
+		double hipX = getWidth() / 2 + HIP_WIDTH;
+		double hipY = getHeight() / 2 - OFFSET_Y;
+		GLine hip = new GLine(hipX, hipY, getWidth()/2, hipY);
+		
+		double legX = hipX;
+		double legY = hipY;
+		GLine leg = new GLine(legX, legY, legX, legY+LEG_LENGTH);
+		
+		
+		
+		double footX = legX;
+		double footY = legY + LEG_LENGTH;
+		GLine foot = new GLine(footX, footY, footX - FOOT_LENGTH, footY);
+		
+		leftLeg.add(hip);
+		leftLeg.add(leg);
+		leftLeg.add(foot);
+		add(leftLeg);
+	}
 
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
