@@ -40,6 +40,7 @@ public class Hangman extends ConsoleProgram {
 		if(input.length() > 1){
 			return false;
 		}
+		return true;
 		
 	}
 	private char readUserInput() {
