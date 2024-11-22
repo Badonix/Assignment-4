@@ -21,16 +21,19 @@ public class Hangman extends ConsoleProgram {
 	private static HangmanLexicon lexicon = new HangmanLexicon();
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
 	private static ArrayList<Character> guessedLetters = new ArrayList<>();
+	private static boolean hasWon = false;
 
     private static int guessesLeft = GUESSES;
 	public void run() {
     	initGame();
     	println(word);
-    	while(guessesLeft > 0){
+    	while(true){
     		play();
+    		if(hasWon || guessesLeft == 0){
+    			break;
+    		}
     	}
-    	println("You lost :((");
-	}
+   	}
 	
 	private void play(){
 		char currentGuess = readUserInput();
@@ -40,6 +43,7 @@ public class Hangman extends ConsoleProgram {
 		tryLetter(currentGuess);
 		if(userGuess.equals(word)){
 			handleWin();
+			break;
 		}
 		println("The word now looks like this: " + userGuess);
 		println("You have " + guessesLeft + " guesses left");
