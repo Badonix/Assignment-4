@@ -8,6 +8,12 @@ import acm.graphics.*;
 
 public class HangmanCanvas extends GCanvas {
 	
+	private static GLine body;
+	private static GLine leftHand;
+	private static GLine rightHand;
+	private static GOval head;
+	private static GLine leftLeg;
+	private static GLine rightLeg;
 
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
@@ -35,7 +41,7 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void drawBody(){
 		double bodyX = getWidth() / 2;
-		double bodyY = getHeight() / 2 - OFFSET_Y;
+		double bodyY = getHeight() / 2 - OFFSET_Y - BODY_LENGTH;
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
