@@ -14,7 +14,7 @@ import java.awt.*;
 public class Hangman extends ConsoleProgram {
 
 	private static String word;
-	private static String userGuess;
+	private static StringBuilder userGuess;
 	private static HangmanLexicon lexicon = new HangmanLexicon();
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
     public void run() {
@@ -30,6 +30,13 @@ public class Hangman extends ConsoleProgram {
     private void initGame(){
     	chooseRandomWord();
 		println("Welcome to Hangman!");
+		println("The word now looks like this: " + )
+    }
+    
+    private void formatUserGuess(){
+    	for(int i = 0; i < word.length(); i++){
+    		userGuess.append("_");
+    	}
     }
 
 }
