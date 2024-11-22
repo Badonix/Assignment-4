@@ -60,7 +60,7 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void drawLeftHand(){
 		double handX = getWidth() / 2 - UPPER_ARM_LENGTH;
-		double handY = getHeight() / 2 - OFFSET_Y + ARM_OFFSET_FROM_HEAD;
+		double handY = getHeight() / 2 - OFFSET_Y - BODY_LENGTH - ARM_OFFSET_FROM_HEAD;
 		GLine hand = new GLine(handX, handY, getWidth() / 2, handY);
 		
 		leftHand.add(hand);
