@@ -30,6 +30,7 @@ public class Hangman extends ConsoleProgram {
     private void initGame(){
     	chooseRandomWord();
 		println("Welcome to Hangman!");
+		formatUserGuess();
 		println("The word now looks like this: " + userGuess);
     }
     
