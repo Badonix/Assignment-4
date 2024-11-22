@@ -35,7 +35,8 @@ public class Hangman extends ConsoleProgram {
 		while(!validateInput(currentGuess)){
 			currentGuess = readUserInput();
 		};
-		println(currentGuess);
+		
+		
 		
 	}
 	
@@ -50,8 +51,8 @@ public class Hangman extends ConsoleProgram {
 		}
 		guessedLetters.add(input);
 		return true;
-		
 	}
+	
 	private char readUserInput() {
 		String text = "";
 		while (text.length() != 1) {
@@ -63,8 +64,12 @@ public class Hangman extends ConsoleProgram {
 		return text.charAt(0);
 	}
 	
+	private void fillTheWord(char guess){
+		if(word.indexOf(guess) != -1){
+			println("GOOD GUESS");
+		}
+	}
 	
-    
     private void chooseRandomWord(){
     	int wordsCount = lexicon.getWordCount();
     	int randomNum = rgen.nextInt(wordsCount); 
