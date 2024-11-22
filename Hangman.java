@@ -37,6 +37,9 @@ public class Hangman extends ConsoleProgram {
     private void formatUserGuess(){
     	for(int i = 0; i < word.length(); i++){
     		userGuess.append("_");
+    		if(i != word.length() - 1){
+    			userGuess.append(" ");
+    		}
     	}
     }
 
