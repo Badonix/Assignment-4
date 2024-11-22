@@ -43,7 +43,6 @@ public class Hangman extends ConsoleProgram {
 		if(word.indexOf(guess) != -1){
 			println("GOOD GUESS");
 		}
-		println(word.indexOf(guess));
 	}
 	
 	
