@@ -17,7 +17,7 @@ public class HangmanCanvas extends GCanvas {
 
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
-		drawBody
+		drawBody();
 	}
 
 /**
