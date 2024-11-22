@@ -49,6 +49,11 @@ public class Hangman extends ConsoleProgram {
 		println("You guessed the word: " + word);
 		println("You win.");
 	}
+	private void handleLoss(){
+		println("You are completly hung.")
+		println("The word was: " + word);
+		println("You lose.");
+	}
 	
 	private void tryLetter(char guess){
 		if(word.indexOf(Character.toUpperCase(guess)) != -1){
