@@ -68,6 +68,7 @@ public class HangmanCanvas extends GCanvas {
 		GLine lowerArm = new GLine(lowerArmX, lowerArmY, lowerArmX, lowerArmY + LOWER_ARM_LENGTH);
 
 		leftHand.add(hand);
+		leftHand.add(lowerArm);
 		add(leftHand);
 	}
 
