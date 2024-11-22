@@ -28,6 +28,7 @@ public class Hangman extends ConsoleProgram {
     	while(guessesLeft > 0){
     		play();
     	}
+    	println("You lost :((");
 	}
 	
 	private void play(){
