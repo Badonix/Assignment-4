@@ -31,7 +31,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void play(){
-		
+		String currentGuess = readLine("Your guess: ");
 	}
 	
 	
