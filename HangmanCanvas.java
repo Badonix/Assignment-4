@@ -56,6 +56,13 @@ public class HangmanCanvas extends GCanvas {
 		body = new GLine(bodyX, bodyY, bodyX, bodyY + BODY_LENGTH);
 		add(body);
 	}
+	
+	private void drawLeftHand(){
+		double handX = getWidth() / 2 - UPPER_ARM_LENGTH;
+		double handY = getHeight() / 2 - OFFSET_Y + ARM_OFFSET_FROM_HEAD;
+		GLine hip = new GLine(handX, handY, getWidth() / 2, handY);
+
+	}
 
 	private void drawLeftLeg() {
 		double hipX = getWidth() / 2 - HIP_WIDTH;
