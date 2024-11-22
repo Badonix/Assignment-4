@@ -51,7 +51,7 @@ public class Hangman extends ConsoleProgram {
 		for(int i = 0; i < word.length(); i++){
 			// Because of spaces each index of word => 2*index of userGuess
 			if(word.charAt(i) == guess){
-				
+				userGuess.setCharAt(2*i, guess);
 			}
 		}
 	}
