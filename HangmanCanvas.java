@@ -12,8 +12,8 @@ public class HangmanCanvas extends GCanvas {
 	private static GLine leftHand;
 	private static GLine rightHand;
 	private static GOval head;
-	private static GCompound leftLeg;
-	private static GCompound rightLeg;
+	private static GCompound leftLeg = new GCompound();
+	private static GCompound rightLeg = new GCompound();
 
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
