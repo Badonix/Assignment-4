@@ -45,12 +45,12 @@ public class Hangman extends ConsoleProgram {
 		if(word.indexOf(Character.toUpperCase(guess)) != -1){
 			fillTheWord(guess);
 		}else{
+			println("There are no " + guess + "'s in the word");
 			guessesLeft--;
 		}
 	}
 	private void fillTheWord(char guess){
 		for(int i = 0; i < word.length(); i++){
-			// Because of spaces each index of word => 2*index of userGuess
 			if(word.charAt(i) == Character.toUpperCase(guess)){
 				userGuess.setCharAt(i, guess);
 			}
