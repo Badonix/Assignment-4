@@ -47,7 +47,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	private void handleWin(){
 		println("You guessed the word: " + word);
-		println("You win.")
+		println("You win.");
 	}
 	
 	private void tryLetter(char guess){
