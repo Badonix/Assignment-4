@@ -7,9 +7,10 @@
 
 import acm.graphics.*;
 import acm.program.*;
-import acm.util.*;
+import acm.util.RandomGenerator;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Hangman extends ConsoleProgram {
 	
@@ -19,10 +20,22 @@ public class Hangman extends ConsoleProgram {
 	private static StringBuilder userGuess = new StringBuilder();
 	private static HangmanLexicon lexicon = new HangmanLexicon();
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
+	private static ArrayList<Character> guessedLetters = new ArrayList<>();
+
     private static int guessesLeft = GUESSES;
 	public void run() {
     	initGame();
+    	while(guessesLeft > 0){
+    		play();
+    	}
 	}
+	
+	private void play(){
+		
+	}
+	
+	
+	
     
     private void chooseRandomWord(){
     	int wordsCount = lexicon.getWordCount();
