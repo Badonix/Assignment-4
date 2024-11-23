@@ -16,18 +16,21 @@ import java.util.ArrayList;
 public class Hangman extends ConsoleProgram {
 
 	private static final int GUESSES = 8;
+	public static final int APPLICATION_HEIGHT = 700;
 
-	private static String word;
-	private static StringBuilder userGuess = new StringBuilder();
 	private static HangmanLexicon lexicon = new HangmanLexicon();
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
-	private static ArrayList<Character> guessedLetters = new ArrayList<>();
-    public static final int APPLICATION_HEIGHT = 700;
+
+	private static String word; // The word user has to guess
+	private static StringBuilder userGuess = new StringBuilder(); // Users guess (--f-z-e)
+	private static ArrayList<Character> guessedLetters = new ArrayList<>(); // ArrayList containing letters user tried
+
+	private static int guessesLeft = GUESSES;
 	private static boolean hasWon = false;
 
-	private HangmanCanvas canvas = new HangmanCanvas();
-	private static int guessesLeft = GUESSES;
-
+	// Canvas to draw man and guesses graphically
+	private static HangmanCanvas canvas = new HangmanCanvas();
+	
 	public void init() {
 		add(canvas);
 	}
@@ -47,18 +50,28 @@ public class Hangman extends ConsoleProgram {
 
 	private void play() {
 		char currentGuess = readUserInput();
+		
+		// We need to get valid input (single character, alphabetic)
 		while (!validateInput(currentGuess)) {
 			currentGuess = readUserInput();
 		}
 		
+		// Checking if letter is is word
 		tryLetter(currentGuess);
+		
+		// Checking if user won
 		if (userGuess.toString().equals(word)) {
 			handleWin();
 			return;
 		}
+		
+		// Printing user's stats/state
+		printCurrentState();
+	}
+	
+	private void printCurrentState(){
 		println("The word now looks like this: " + userGuess);
 		println("You have " + guessesLeft + " guesses left");
-
 	}
 
 	private void handleWin() {
