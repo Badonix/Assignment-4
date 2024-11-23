@@ -21,8 +21,7 @@ public class HangmanCanvas extends GCanvas {
 	private static GLine scaffold;
 	private static GLabel guess;
 	private static GLabel incorrectGuess = new GLabel("");
-	private static StringBuilder incorrectGuesses = new StringBuilder(); // Stores all incorrect guesses
-
+	private static StringBuilder incorrectGuesses = new StringBuilder();
 
 	/** Resets the display so that only the scaffold appears */
 	public void reset() {
