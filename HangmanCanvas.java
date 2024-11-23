@@ -41,7 +41,7 @@ public class HangmanCanvas extends GCanvas {
 	 * unguessed letters are indicated by hyphens.
 	 */
 	public void displayWord(String word) {
-		/* You fill this in */
+		remove(guess);
 		guess = new GLabel(word);
 		guess.setFont("serif-25");
 		add(guess, OFFSET_X, getHeight() - guess.getAscent()*2 - LABELS_GAP - OFFSET_Y);
