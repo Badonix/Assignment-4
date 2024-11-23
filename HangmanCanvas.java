@@ -113,7 +113,7 @@ public class HangmanCanvas extends GCanvas {
 	private void drawLeftFoot() {
 		double footX = getWidth() / 2 - HIP_WIDTH;
 		double footY = getHeight() / 2 - OFFSET_Y + LEG_LENGTH;
-		GLine foot = new GLine(footX, footY, footX - FOOT_LENGTH, footY);
+		leftFoot = new GLine(footX, footY, footX - FOOT_LENGTH, footY);
 		add(foot);
 	}
 
@@ -133,7 +133,7 @@ public class HangmanCanvas extends GCanvas {
 	private void drawRightFoot() {
 		double footX = getWidth() / 2 + HIP_WIDTH;
 		double footY = getHeight() / 2 - OFFSET_Y + LEG_LENGTH;
-		GLine foot = new GLine(footX, footY, footX + FOOT_LENGTH, footY);
+		rightFoot = new GLine(footX, footY, footX + FOOT_LENGTH, footY);
 		add(foot);
 	}
 
