@@ -20,6 +20,7 @@ public class HangmanCanvas extends GCanvas {
 	private static GCompound beamAndRope = new GCompound();
 	private static GLine scaffold;
 	private static GLabel guess;
+	private static GLabel incorrectGuess;
 
 	/** Resets the display so that only the scaffold appears */
 	public void reset() {
@@ -56,7 +57,9 @@ public class HangmanCanvas extends GCanvas {
 	 * bottom of the window.
 	 */
 	public void noteIncorrectGuess(char letter) {
-		/* You fill this in */
+		incorrectGuess = new GLabel("ABCDS");
+		incorrectGuess.setFont("serif-18");
+		add(incorrectGuess, OFFSET_X, guess.getY() - guess.getAscent() - LABELS_GAP);
 	}
 
 
