@@ -136,5 +136,6 @@ public class Hangman extends ConsoleProgram {
 			userGuess.append("-");
 		}
 		canvas.displayWord(userGuess.toString());
+		canvas.noteIncorrectGuess('a');
 	}
 }
