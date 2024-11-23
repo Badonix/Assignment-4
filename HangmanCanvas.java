@@ -83,9 +83,6 @@ public class HangmanCanvas extends GCanvas {
         case 8:
             drawRightFoot();
             break;
-        default:
-            // No action needed if all parts are already drawn
-            break;
     }
 	}
 
