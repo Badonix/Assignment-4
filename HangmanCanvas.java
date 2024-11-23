@@ -44,7 +44,7 @@ public class HangmanCanvas extends GCanvas {
 		/* You fill this in */
 		guess = new GLabel(word);
 		guess.setFont("serif-20");
-		add(guess, OFFSET_X, getHeight()/2 + OFFSET_Y);
+		add(guess, OFFSET_X, getHeight() - guess.getAscent()*2 - OFFSET_Y);
 	}
 
 	/**
