@@ -99,7 +99,6 @@ public class Hangman extends ConsoleProgram {
 		}
 		if (!Character.isLetter(input)) {
 			println("Letter is not valid");
-			canvas.noteIncorrectGuess(input);
 			return false;
 		}
 		guessedLetters.add(Character.toUpperCase(input));
