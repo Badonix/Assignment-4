@@ -9,19 +9,29 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import acm.util.*;
 
 public class HangmanLexicon {
+    private ArrayList<String> words;
 
 	/** Returns the number of words in the lexicon. */
 	public HangmanLexicon() {
+		words = new ArrayList<>();
 		try {
-
 			BufferedReader rd = new BufferedReader(new FileReader("HangmanLexicon.txt"));
+			while(true){
+				String currentWord = rd.readLine();
+				if(currentWord == null){
+					break;
+				}
+                words.add(currentWord);
+			}
 		} catch (IOException e) {
 			return;
 		}
+		System.out.println(words);
 	}
 
 	public int getWordCount() {
