@@ -145,6 +145,7 @@ public class HangmanCanvas extends GCanvas {
 		double scaffoldX = getWidth() / 2 - BEAM_LENGTH;
 		double scaffoldY = beamAndRope.getY();
 		scaffold = new GLine(scaffoldX, scaffoldY, scaffoldX, scaffoldY + SCAFFOLD_HEIGHT);
+		add(scaffold);
 	}
 
 	/* Constants for the simple version of the picture (in pixels) */
