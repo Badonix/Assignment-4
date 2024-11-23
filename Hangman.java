@@ -102,6 +102,7 @@ public class Hangman extends ConsoleProgram {
 			return false;
 		}
 		guessedLetters.add(Character.toUpperCase(input));
+		canvas.noteIncorrectGuess(input);
 		return true;
 	}
 
@@ -136,6 +137,5 @@ public class Hangman extends ConsoleProgram {
 			userGuess.append("-");
 		}
 		canvas.displayWord(userGuess.toString());
-		canvas.noteIncorrectGuess('a');
 	}
 }
