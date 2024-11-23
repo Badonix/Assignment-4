@@ -79,6 +79,7 @@ public class Hangman extends ConsoleProgram {
 			fillTheWord(guess);
 		} else {
 			println("There are no " + guess + "'s in the word");
+			canvas.noteIncorrectGuess(guess);
 			guessesLeft--;
 		}
 	}
@@ -102,8 +103,6 @@ public class Hangman extends ConsoleProgram {
 			return false;
 		}
 		guessedLetters.add(Character.toUpperCase(input));
-
-		canvas.noteIncorrectGuess(input);
 		return true;
 	}
 
