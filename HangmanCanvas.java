@@ -58,19 +58,12 @@ public class HangmanCanvas extends GCanvas {
 	 * bottom of the window.
 	 */
 	public void noteIncorrectGuess(char letter) {
-	    // Append the incorrect letter to the StringBuilder
 	    incorrectGuesses.append(letter);
-
-	    // Remove the previous label if it exists
 	    if (incorrectGuess != null) {
 	        remove(incorrectGuess);
 	    }
-
-	    // Create a new label with updated incorrect guesses
 	    incorrectGuess = new GLabel(incorrectGuesses.toString());
 	    incorrectGuess.setFont("serif-18");
-
-	    // Position it below the guessed word
 	    add(incorrectGuess, OFFSET_X, guess.getY() + guess.getAscent() + LABELS_GAP);
 	}
 
