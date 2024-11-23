@@ -9,18 +9,32 @@ import acm.graphics.*;
 
 public class HangmanCanvas extends GCanvas {
 
+	
+	// Probably not necessary to make them instance variables but can be helpful for extensions
 	private static GLine body;
-	private static GCompound leftHand = new GCompound();
-	private static GCompound rightHand = new GCompound();
 	private static GOval head;
-	private static GCompound leftLeg = new GCompound();
-	private static GCompound rightLeg = new GCompound();
+	
 	private static GLine leftFoot;
 	private static GLine rightFoot;
-	private static GCompound beamAndRope = new GCompound();
+	
 	private static GLine scaffold;
+	
+	// Using GCompound for parts with multiple segments
+	private static GCompound leftHand = new GCompound();
+	private static GCompound rightHand = new GCompound();
+
+	private static GCompound leftLeg = new GCompound();
+	private static GCompound rightLeg = new GCompound();
+
+	private static GCompound beamAndRope = new GCompound();
+
+	// guess is users guess with hyphens (for example --c-r)
 	private static GLabel guess;
+	
+	// label for incorrectGuesses
 	private static GLabel incorrectGuess = new GLabel("");
+	
+	// string which contains all users incorrect guesses
 	private static StringBuilder incorrectGuesses = new StringBuilder();
 
 	/** Resets the display so that only the scaffold appears */
@@ -36,12 +50,14 @@ public class HangmanCanvas extends GCanvas {
 	 * unguessed letters are indicated by hyphens.
 	 */
 	public void displayWord(String word) {
+		// To update the word we need to remove the previous word so they don't overlap
 		if (guess != null) {
 			remove(guess);
 		}
 		guess = new GLabel(word);
 		guess.setFont("serif-25");
-		add(guess, OFFSET_X, getHeight() - guess.getAscent() * 2 - LABELS_GAP - OFFSET_Y);
+		double guessY = getHeight() - guess.getAscent() * 2 - LABELS_GAP - OFFSET_Y;
+		add(guess, OFFSET_X, guessY);
 	}
 
 	/**
