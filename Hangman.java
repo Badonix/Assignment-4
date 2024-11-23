@@ -25,12 +25,10 @@ public class Hangman extends ConsoleProgram {
     public static final int APPLICATION_HEIGHT = 700;
 	private static boolean hasWon = false;
 
-	private HangmanCanvas canvas;
-
+	private HangmanCanvas canvas = new HangmanCanvas();
 	private static int guessesLeft = GUESSES;
 
 	public void init() {
-		canvas = new HangmanCanvas();
 		add(canvas);
 	}
 
@@ -91,7 +89,7 @@ public class Hangman extends ConsoleProgram {
 				userGuess.setCharAt(i, Character.toUpperCase(guess));
 			}
 		}
-		HangmanCanvas.displayWord(userGuess.toString());
+		canvas.displayWord(userGuess.toString());
 	}
 
 	private boolean validateInput(char input) {
