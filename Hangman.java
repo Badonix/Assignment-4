@@ -102,6 +102,7 @@ public class Hangman extends ConsoleProgram {
 			return false;
 		}
 		guessedLetters.add(Character.toUpperCase(input));
+		println(guessedLetters);
 		canvas.noteIncorrectGuess(input);
 		return true;
 	}
