@@ -22,7 +22,7 @@ public class Hangman extends ConsoleProgram {
 	private static HangmanLexicon lexicon = new HangmanLexicon();
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
 	private static ArrayList<Character> guessedLetters = new ArrayList<>();
-    public static final int APPLICATION_HEIGHT = 600;
+    public static final int APPLICATION_HEIGHT = 900;
 	private static boolean hasWon = false;
 
 	private HangmanCanvas canvas;
