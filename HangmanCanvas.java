@@ -20,11 +20,12 @@ public class HangmanCanvas extends GCanvas {
 	private static GCompound beamAndRope = new GCompound();
 	private static GLine scaffold;
 
- 	/** Resets the display so that only the scaffold appears */
+	/** Resets the display so that only the scaffold appears */
 	public void reset() {
 		drawBody();
 		drawHead();
 		drawLeftLeg();
+		drawLeftFoot();
 		drawRightLeg();
 		drawRightFoot();
 		drawLeftHand();
@@ -52,12 +53,8 @@ public class HangmanCanvas extends GCanvas {
 		/* You fill this in */
 	}
 
-	private void drawRightFoot(){
-		double footX = getWidth() / 2 + HIP_WIDTH;
-		double footY = getHeight() / 2 - OFFSET_Y + LEG_LENGTH;
-		GLine foot = new GLine(footX, footY, footX + FOOT_LENGTH, footY);
-		add(foot);
-	}
+
+
 	private void drawHead() {
 		double headX = getWidth() / 2 - HEAD_RADIUS;
 		double headY = getHeight() / 2 - OFFSET_Y - BODY_LENGTH - HEAD_RADIUS * 2;
@@ -109,14 +106,15 @@ public class HangmanCanvas extends GCanvas {
 		double legY = hipY;
 		GLine leg = new GLine(legX, legY, legX, legY + LEG_LENGTH);
 
-		double footX = legX;
-		double footY = legY + LEG_LENGTH;
-		GLine foot = new GLine(footX, footY, footX - FOOT_LENGTH, footY);
-
 		leftLeg.add(hip);
 		leftLeg.add(leg);
-		leftLeg.add(foot);
 		add(leftLeg);
+	}
+	private void drawLeftFoot() {
+		double footX = getWidth() / 2 - HIP_WIDTH;
+		double footY = getHeight() / 2 - OFFSET_Y + LEG_LENGTH;
+		GLine foot = new GLine(footX, footY, footX - FOOT_LENGTH, footY);
+		add(foot);
 	}
 
 	private void drawRightLeg() {
@@ -128,10 +126,15 @@ public class HangmanCanvas extends GCanvas {
 		double legY = hipY;
 		GLine leg = new GLine(legX, legY, legX, legY + LEG_LENGTH);
 
-
 		rightLeg.add(hip);
 		rightLeg.add(leg);
 		add(rightLeg);
+	}
+	private void drawRightFoot() {
+		double footX = getWidth() / 2 + HIP_WIDTH;
+		double footY = getHeight() / 2 - OFFSET_Y + LEG_LENGTH;
+		GLine foot = new GLine(footX, footY, footX + FOOT_LENGTH, footY);
+		add(foot);
 	}
 
 	private void drawBeamAndRope() {
