@@ -59,7 +59,7 @@ public class HangmanCanvas extends GCanvas {
 	public void noteIncorrectGuess(char letter) {
 		incorrectGuess = new GLabel("ABCDS");
 		incorrectGuess.setFont("serif-18");
-		add(incorrectGuess, OFFSET_X, guess.getY() - guess.getAscent() - LABELS_GAP);
+		add(incorrectGuess, OFFSET_X, guess.getY() + guess.getAscent() + LABELS_GAP);
 	}
 
 
