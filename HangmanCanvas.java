@@ -9,16 +9,16 @@ import acm.graphics.*;
 
 public class HangmanCanvas extends GCanvas {
 
-	
-	// Probably not necessary to make them instance variables but can be helpful for extensions
+	// Probably not necessary to make them instance variables but can be helpful
+	// for extensions
 	private static GLine body;
 	private static GOval head;
-	
+
 	private static GLine leftFoot;
 	private static GLine rightFoot;
-	
+
 	private static GLine scaffold;
-	
+
 	// Using GCompound for parts with multiple segments
 	private static GCompound leftHand = new GCompound();
 	private static GCompound rightHand = new GCompound();
@@ -30,10 +30,10 @@ public class HangmanCanvas extends GCanvas {
 
 	// guess is users guess with hyphens (for example --c-r)
 	private static GLabel guess;
-	
+
 	// label for incorrectGuesses
 	private static GLabel incorrectGuess = new GLabel("");
-	
+
 	// string which contains all users incorrect guesses
 	private static StringBuilder incorrectGuesses = new StringBuilder();
 
@@ -50,12 +50,16 @@ public class HangmanCanvas extends GCanvas {
 	 * unguessed letters are indicated by hyphens.
 	 */
 	public void displayWord(String word) {
-		// To update the word we need to remove the previous word so they don't overlap
+		// To update the word we need to remove the previous word so they don't
+		// overlap
 		if (guess != null) {
 			remove(guess);
 		}
 		guess = new GLabel(word);
 		guess.setFont("serif-25");
+
+		// Calculating based on its own height, offset and gap, nothing
+		// specific, can be changed;
 		double guessY = getHeight() - guess.getAscent() * 2 - LABELS_GAP - OFFSET_Y;
 		add(guess, OFFSET_X, guessY);
 	}
@@ -67,13 +71,23 @@ public class HangmanCanvas extends GCanvas {
 	 * bottom of the window.
 	 */
 	public void noteIncorrectGuess(char letter) {
+
+		// Appending to incorrect guesses list
 		incorrectGuesses.append(letter);
+
+		// Remove previous rendering of incorrectGuess label
 		if (incorrectGuess != null) {
 			remove(incorrectGuess);
 		}
 		incorrectGuess = new GLabel(incorrectGuesses.toString());
 		incorrectGuess.setFont("serif-18");
-		add(incorrectGuess, OFFSET_X, guess.getY() + guess.getAscent() + LABELS_GAP);
+
+		// Calculating y based on its height and gap (can be changed, nothing
+		// specific)
+		double incorrectGuessY = guess.getY() + guess.getAscent() + LABELS_GAP;
+		add(incorrectGuess, OFFSET_X, incorrectGuessY);
+		
+		// Determining which body part to hang
 		switch (incorrectGuesses.length()) {
 		case 1:
 			drawHead();
