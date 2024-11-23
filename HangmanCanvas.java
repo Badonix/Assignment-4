@@ -19,6 +19,7 @@ public class HangmanCanvas extends GCanvas {
 	private static GLine rightFoot;
 	private static GCompound beamAndRope = new GCompound();
 	private static GLine scaffold;
+	private static GLabel guess;
 
 	/** Resets the display so that only the scaffold appears */
 	public void reset() {
@@ -41,6 +42,8 @@ public class HangmanCanvas extends GCanvas {
 	 */
 	public void displayWord(String word) {
 		/* You fill this in */
+		guess = new GLabel(word);
+		add(guess, OFFSET_X, getHeight()/2 + OFFSET_Y);
 	}
 
 	/**
@@ -170,5 +173,7 @@ public class HangmanCanvas extends GCanvas {
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
 	private static final int OFFSET_Y = 20;
+	private static final int OFFSET_X = 40;
+	private static final int LABELS_GAP = 20;
 
 }
