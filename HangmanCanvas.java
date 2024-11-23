@@ -58,12 +58,12 @@ public class HangmanCanvas extends GCanvas {
 		body = new GLine(bodyX, bodyY, bodyX, bodyY + BODY_LENGTH);
 		add(body);
 	}
-	
-	private void drawLeftHand(){
+
+	private void drawLeftHand() {
 		double handX = getWidth() / 2 - UPPER_ARM_LENGTH;
 		double handY = getHeight() / 2 - OFFSET_Y - BODY_LENGTH + ARM_OFFSET_FROM_HEAD;
 		GLine hand = new GLine(handX, handY, getWidth() / 2, handY);
-		
+
 		double lowerArmX = handX;
 		double lowerArmY = handY;
 		GLine lowerArm = new GLine(lowerArmX, lowerArmY, lowerArmX, lowerArmY + LOWER_ARM_LENGTH);
@@ -72,11 +72,12 @@ public class HangmanCanvas extends GCanvas {
 		leftHand.add(lowerArm);
 		add(leftHand);
 	}
-	private void drawRightHand(){
+
+	private void drawRightHand() {
 		double handX = getWidth() / 2 + UPPER_ARM_LENGTH;
 		double handY = getHeight() / 2 - OFFSET_Y - BODY_LENGTH + ARM_OFFSET_FROM_HEAD;
 		GLine hand = new GLine(handX, handY, getWidth() / 2, handY);
-		
+
 		double lowerArmX = handX;
 		double lowerArmY = handY;
 		GLine lowerArm = new GLine(lowerArmX, lowerArmY, lowerArmX, lowerArmY + LOWER_ARM_LENGTH);
@@ -122,6 +123,11 @@ public class HangmanCanvas extends GCanvas {
 		rightLeg.add(leg);
 		rightLeg.add(foot);
 		add(rightLeg);
+	}
+	
+	private void drawRope(){
+		double ropeX = getWidth()/2;
+		double ropeY = getHeight()/2 - OFFSET_Y - HEAD_RADIUS * 2 - BODY_LENGTH;
 	}
 
 	/* Constants for the simple version of the picture (in pixels) */
