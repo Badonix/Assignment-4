@@ -22,15 +22,20 @@ public class Hangman extends ConsoleProgram {
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
 
 	private static String word; // The word user has to guess
-	private static StringBuilder userGuess = new StringBuilder(); // Users guess (--f-z-e)
-	private static ArrayList<Character> guessedLetters = new ArrayList<>(); // ArrayList containing letters user tried
+	private static StringBuilder userGuess = new StringBuilder(); // Users guess
+																	// (--f-z-e)
+	private static ArrayList<Character> guessedLetters = new ArrayList<>(); // ArrayList
+																			// containing
+																			// letters
+																			// user
+																			// tried
 
 	private static int guessesLeft = GUESSES;
 	private static boolean hasWon = false;
 
 	// Canvas to draw man and guesses graphically
 	private static HangmanCanvas canvas = new HangmanCanvas();
-	
+
 	public void init() {
 		add(canvas);
 	}
@@ -50,26 +55,26 @@ public class Hangman extends ConsoleProgram {
 
 	private void play() {
 		char currentGuess = readUserInput();
-		
+
 		// We need to get valid input (single character, alphabetic)
 		while (!validateInput(currentGuess)) {
 			currentGuess = readUserInput();
 		}
-		
+
 		// Checking if letter is is word
 		tryLetter(currentGuess);
-		
+
 		// Checking if user won
 		if (userGuess.toString().equals(word)) {
 			handleWin();
 			return;
 		}
-		
+
 		// Printing user's stats/state
 		printCurrentState();
 	}
-	
-	private void printCurrentState(){
+
+	private void printCurrentState() {
 		println("The word now looks like this: " + userGuess);
 		println("You have " + guessesLeft + " guesses left");
 	}
@@ -87,7 +92,8 @@ public class Hangman extends ConsoleProgram {
 	}
 
 	private void tryLetter(char guess) {
-		// indexOf returns -1 if there is no such character in word,if it doesn't return -1 then it INCLUDES that letter
+		// indexOf returns -1 if there is no such character in word,if it
+		// doesn't return -1 then it INCLUDES that letter
 		if (word.indexOf(Character.toUpperCase(guess)) != -1) {
 			println("That guess is correct");
 			// Update userGuess string
@@ -103,31 +109,32 @@ public class Hangman extends ConsoleProgram {
 	private void fillTheWord(char guess) {
 		// Iterating over the word
 		for (int i = 0; i < word.length(); i++) {
-			// If current letter of word == user's guess then replace hyphen with letter
+			// If current letter of word == user's guess then replace hyphen
+			// with letter
 			if (word.charAt(i) == Character.toUpperCase(guess)) {
 				userGuess.setCharAt(i, Character.toUpperCase(guess));
 			}
 		}
-		
+
 		// Update the userGuess on canvas
 		canvas.displayWord(userGuess.toString());
 	}
 
-	
 	// Validating input so that user can only enter unused alphabetic character
 	private boolean validateInput(char input) {
-		// If it already used (is in the list of guessedLetters) then print message and return
+		// If it already used (is in the list of guessedLetters) then print
+		// message and return
 		if (guessedLetters.contains(Character.toUpperCase(input))) {
 			println("Letter is already used");
 			return false;
 		}
-		
+
 		// Checking if its valid letter
 		if (!Character.isLetter(input)) {
 			println("Letter is not valid");
 			return false;
 		}
-		
+
 		// Adding to guessedLetters list
 		guessedLetters.add(Character.toUpperCase(input));
 		return true;
@@ -142,19 +149,19 @@ public class Hangman extends ConsoleProgram {
 				println("Enter single character");
 			}
 		}
-		
-		// To get character from string with length of 1 we just need to return string's character at 0 index
+
+		// To get character from string with length of 1 we just need to return
+		// string's character at 0 index
 		return text.charAt(0);
 	}
 
 	// Choosing random word for user to guess
 	private void chooseRandomWord() {
 		int wordsCount = lexicon.getWordCount();
-		/* Returns random number from 0 to wordsCount
-		 * Note: lexicons words are ordered from 0 to length-1
-		 * nextInt(n) returns random integer from  0 to n-1 (excluding last) 
+		/*
+		 * Note: lexicon words are ordered from 0 to length-1 
+		 * nextInt(n) returns random integer from 0 to n-1 (excluding last) 
 		 * so no need for decrementing by 1
-		 * 
 		 */
 		int randomNum = rgen.nextInt(wordsCount);
 		word = lexicon.getWord(randomNum);
@@ -169,6 +176,7 @@ public class Hangman extends ConsoleProgram {
 		println("You have " + guessesLeft + " guesses left");
 	}
 
+	// Setting default userGuess to - - - - - -...
 	private void initUserGuess() {
 		for (int i = 0; i < word.length(); i++) {
 			userGuess.append("-");
