@@ -75,7 +75,7 @@ public class Hangman extends ConsoleProgram {
 	}
 
 	private void handleWin() {
-		hasWon = true;
+		hasWon = true; // It stops game loop
 		println("You guessed the word: " + word);
 		println("You win.");
 	}
@@ -87,8 +87,10 @@ public class Hangman extends ConsoleProgram {
 	}
 
 	private void tryLetter(char guess) {
+		// indexOf returns -1 if there is no such character in word,if it doesn't return -1 then it INCLUDES that letter
 		if (word.indexOf(Character.toUpperCase(guess)) != -1) {
 			println("That guess is correct");
+			// Update userGuess string
 			fillTheWord(guess);
 		} else {
 			println("There are no " + guess + "'s in the word");
@@ -97,24 +99,36 @@ public class Hangman extends ConsoleProgram {
 		}
 	}
 
+	// Updates userGuess
 	private void fillTheWord(char guess) {
+		// Iterating over the word
 		for (int i = 0; i < word.length(); i++) {
+			// If current letter of word == user's guess then replace hyphen with letter
 			if (word.charAt(i) == Character.toUpperCase(guess)) {
 				userGuess.setCharAt(i, Character.toUpperCase(guess));
 			}
 		}
+		
+		// Update the userGuess on canvas
 		canvas.displayWord(userGuess.toString());
 	}
 
+	
+	// Validating input so that user can only enter unused alphabetic character
 	private boolean validateInput(char input) {
+		// If it already used (is in the list of guessedLetters) then print message and return
 		if (guessedLetters.contains(Character.toUpperCase(input))) {
 			println("Letter is already used");
 			return false;
 		}
+		
+		// Checking if its valid letter
 		if (!Character.isLetter(input)) {
 			println("Letter is not valid");
 			return false;
 		}
+		
+		// Adding to guessedLetters list
 		guessedLetters.add(Character.toUpperCase(input));
 		return true;
 	}
