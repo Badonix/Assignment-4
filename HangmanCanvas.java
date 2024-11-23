@@ -127,24 +127,24 @@ public class HangmanCanvas extends GCanvas {
 		rightLeg.add(foot);
 		add(rightLeg);
 	}
-	
-	private void drawBeamAndRope(){
-		double ropeX = getWidth()/2;
-		double ropeY = getHeight()/2 - OFFSET_Y - HEAD_RADIUS * 2 - BODY_LENGTH - ROPE_LENGTH;
+
+	private void drawBeamAndRope() {
+		double ropeX = getWidth() / 2;
+		double ropeY = getHeight() / 2 - OFFSET_Y - HEAD_RADIUS * 2 - BODY_LENGTH - ROPE_LENGTH;
 		GLine rope = new GLine(ropeX, ropeY, ropeX, ropeY + ROPE_LENGTH);
 		beamAndRope.add(rope);
-		
+
 		double beamX = ropeX - BEAM_LENGTH;
 		double beamY = ropeY;
 		GLine beam = new GLine(beamX, beamY, beamX + BEAM_LENGTH, beamY);
 		beamAndRope.add(beam);
 		add(beamAndRope);
 	}
-	
-	private void drawScaffold(){
-		double scaffoldX = getWidth()/2 - BEAM_LENGTH;
+
+	private void drawScaffold() {
+		double scaffoldX = getWidth() / 2 - BEAM_LENGTH;
 		double scaffoldY = beamAndRope.getY();
-		scaffold = new GLine(scaffoldX, scaffoldY, scaffoldX, scaffoldY+SCAFFOLD_HEIGHT);
+		scaffold = new GLine(scaffoldX, scaffoldY, scaffoldX, scaffoldY + SCAFFOLD_HEIGHT);
 	}
 
 	/* Constants for the simple version of the picture (in pixels) */
