@@ -95,14 +95,15 @@ public class Hangman extends ConsoleProgram {
 	private boolean validateInput(char input) {
 		if (guessedLetters.contains(input)) {
 			println("Letter is already used");
+			canvas.noteIncorrectGuess(input);
 			return false;
 		}
 		if (!Character.isLetter(input)) {
 			println("Letter is not valid");
+			canvas.noteIncorrectGuess(input);
 			return false;
 		}
 		guessedLetters.add(Character.toUpperCase(input));
-		canvas.noteIncorrectGuess(input);
 		return true;
 	}
 
