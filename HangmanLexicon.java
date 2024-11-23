@@ -17,18 +17,23 @@ public class HangmanLexicon {
 	// Need ArrayList to store words as we don't know the amount of total words
     private ArrayList<String> words;
 
+    // Here we can change the word list
     private static final String FILE_NAME = "HangmanLexicon.txt";
 	/** Returns the number of words in the lexicon. */
 	public HangmanLexicon() {
 		// Constructor sets words to an empty list
 		words = new ArrayList<>();
 		try {
+			
+			// Opening buffered reader for word list
 			BufferedReader rd = new BufferedReader(new FileReader(FILE_NAME));
 			while(true){
 				String currentWord = rd.readLine();
+				// If its null then we reached EOF
 				if(currentWord == null){
 					break;
 				}
+				// Add current line to our list
                 words.add(currentWord);
 			}
 		} catch (IOException e) {
@@ -36,6 +41,7 @@ public class HangmanLexicon {
 		}
 	}
 
+	// Explains itself
 	public int getWordCount() {
 		return words.size();
 	}
