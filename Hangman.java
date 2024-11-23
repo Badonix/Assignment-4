@@ -93,22 +93,19 @@ public class Hangman extends ConsoleProgram {
 	}
 
 	private boolean validateInput(char input) {
-	    if (guessedLetters.contains(Character.toUpperCase(input))) {
-	        println("Letter is already used");
-	        return false; // Exit the method here if the letter is already guessed
-	    }
+		if (guessedLetters.contains(Character.toUpperCase(input))) {
+			println("Letter is already used");
+			return false;
+		}
+		if (!Character.isLetter(input)) {
+			println("Letter is not valid");
+			return false;
+		}
+		guessedLetters.add(Character.toUpperCase(input));
 
-	    if (!Character.isLetter(input)) {
-	        println("Letter is not valid");
-	        return false; // Exit the method here if the input is not a letter
-	    }
-
-	    // If all checks pass, add the letter to guessedLetters and proceed
-	    guessedLetters.add(Character.toUpperCase(input));
-	    canvas.noteIncorrectGuess(input); // Add to canvas only after successful validation
-	    return true;
+		canvas.noteIncorrectGuess(input);
+		return true;
 	}
-
 
 	private char readUserInput() {
 		String text = "";
