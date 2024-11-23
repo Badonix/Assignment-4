@@ -36,12 +36,12 @@ public class HangmanCanvas extends GCanvas {
 	 * unguessed letters are indicated by hyphens.
 	 */
 	public void displayWord(String word) {
-		if(guess != null){		
+		if (guess != null) {
 			remove(guess);
 		}
 		guess = new GLabel(word);
 		guess.setFont("serif-25");
-		add(guess, OFFSET_X, getHeight() - guess.getAscent()*2 - LABELS_GAP - OFFSET_Y);
+		add(guess, OFFSET_X, getHeight() - guess.getAscent() * 2 - LABELS_GAP - OFFSET_Y);
 	}
 
 	/**
@@ -51,42 +51,40 @@ public class HangmanCanvas extends GCanvas {
 	 * bottom of the window.
 	 */
 	public void noteIncorrectGuess(char letter) {
-	    incorrectGuesses.append(letter);
-	    if (incorrectGuess != null) {
-	        remove(incorrectGuess);
-	    }
-	    incorrectGuess = new GLabel(incorrectGuesses.toString());
-	    incorrectGuess.setFont("serif-18");
-	    add(incorrectGuess, OFFSET_X, guess.getY() + guess.getAscent() + LABELS_GAP);
-	    switch (incorrectGuesses.length()) {
-        case 1:
-            drawHead();
-            break;
-        case 2:
-            drawBody();
-            break;
-        case 3:
-            drawLeftHand();
-            break;
-        case 4:
-            drawRightHand();
-            break;
-        case 5:
-            drawLeftLeg();
-            break;
-        case 6:
-            drawRightLeg();
-            break;
-        case 7:
-            drawLeftFoot();
-            break;
-        case 8:
-            drawRightFoot();
-            break;
-    }
+		incorrectGuesses.append(letter);
+		if (incorrectGuess != null) {
+			remove(incorrectGuess);
+		}
+		incorrectGuess = new GLabel(incorrectGuesses.toString());
+		incorrectGuess.setFont("serif-18");
+		add(incorrectGuess, OFFSET_X, guess.getY() + guess.getAscent() + LABELS_GAP);
+		switch (incorrectGuesses.length()) {
+		case 1:
+			drawHead();
+			break;
+		case 2:
+			drawBody();
+			break;
+		case 3:
+			drawLeftHand();
+			break;
+		case 4:
+			drawRightHand();
+			break;
+		case 5:
+			drawLeftLeg();
+			break;
+		case 6:
+			drawRightLeg();
+			break;
+		case 7:
+			drawLeftFoot();
+			break;
+		case 8:
+			drawRightFoot();
+			break;
+		}
 	}
-
-
 
 	private void drawHead() {
 		double headX = getWidth() / 2 - HEAD_RADIUS;
@@ -143,6 +141,7 @@ public class HangmanCanvas extends GCanvas {
 		leftLeg.add(leg);
 		add(leftLeg);
 	}
+
 	private void drawLeftFoot() {
 		double footX = getWidth() / 2 - HIP_WIDTH;
 		double footY = getHeight() / 2 - OFFSET_Y + LEG_LENGTH;
@@ -163,6 +162,7 @@ public class HangmanCanvas extends GCanvas {
 		rightLeg.add(leg);
 		add(rightLeg);
 	}
+
 	private void drawRightFoot() {
 		double footX = getWidth() / 2 + HIP_WIDTH;
 		double footY = getHeight() / 2 - OFFSET_Y + LEG_LENGTH;
