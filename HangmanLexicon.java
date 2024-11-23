@@ -31,11 +31,10 @@ public class HangmanLexicon {
 		} catch (IOException e) {
 			return;
 		}
-		System.out.println(words);
 	}
 
 	public int getWordCount() {
-		return 10;
+		return words.size();
 	}
 
 	/** Returns the word at the specified index. */
