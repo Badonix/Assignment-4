@@ -22,13 +22,8 @@ public class Hangman extends ConsoleProgram {
 	private static RandomGenerator rgen = RandomGenerator.getInstance();
 
 	private static String word; // The word user has to guess
-	private static StringBuilder userGuess = new StringBuilder(); // Users guess
-																	// (--f-z-e)
-	private static ArrayList<Character> guessedLetters = new ArrayList<>(); // ArrayList
-																			// containing
-																			// letters
-																			// user
-																			// tried
+	private static StringBuilder userGuess = new StringBuilder(); // Users guess (--f-z-e)
+	private static ArrayList<Character> guessedLetters = new ArrayList<>(); // ArrayList containing letters user tried
 
 	private static int guessesLeft = GUESSES;
 	private static boolean hasWon = false;
