@@ -52,7 +52,7 @@ public class Hangman extends ConsoleProgram {
 		while (!validateInput(currentGuess)) {
 			currentGuess = readUserInput();
 		}
-		;
+		
 		tryLetter(currentGuess);
 		if (userGuess.toString().equals(word)) {
 			handleWin();
