@@ -91,6 +91,7 @@ public class Hangman extends ConsoleProgram {
 				userGuess.setCharAt(i, Character.toUpperCase(guess));
 			}
 		}
+		displayWord(userGuess);
 	}
 
 	private boolean validateInput(char input) {
