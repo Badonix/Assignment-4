@@ -16,6 +16,7 @@ public class HangmanCanvas extends GCanvas {
 	private static GCompound leftLeg = new GCompound();
 	private static GCompound rightLeg = new GCompound();
 	private static GCompound beamAndRope = new GCompound();
+	private static GLine scaffold;
 
 	/** Resets the display so that only the scaffold appears */
 	public void reset() {
@@ -138,6 +139,12 @@ public class HangmanCanvas extends GCanvas {
 		GLine beam = new GLine(beamX, beamY, beamX + BEAM_LENGTH, beamY);
 		beamAndRope.add(beam);
 		add(beamAndRope);
+	}
+	
+	private void drawScaffold(){
+		double scaffoldX = getWidth()/2 - BEAM_LENGTH;
+		double scaffoldY = beamAndRope.getY();
+		scaffold = new GLine(scaffoldX, scaffoldY, scaffoldX, scaffoldY+SCAFFOLD_HEIGHT);
 	}
 
 	/* Constants for the simple version of the picture (in pixels) */
