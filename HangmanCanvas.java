@@ -25,14 +25,7 @@ public class HangmanCanvas extends GCanvas {
 
 	/** Resets the display so that only the scaffold appears */
 	public void reset() {
-		drawBody();
-		drawHead();
-		drawLeftLeg();
-		drawLeftFoot();
-		drawRightLeg();
-		drawRightFoot();
-		drawLeftHand();
-		drawRightHand();
+		removeAll();
 		drawBeamAndRope();
 		drawScaffold();
 	}
