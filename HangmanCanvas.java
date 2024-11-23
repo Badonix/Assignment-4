@@ -118,6 +118,7 @@ public class HangmanCanvas extends GCanvas {
 
 	
 	// Rest of the code is just drawing body parts correctly
+	
 	private void drawHead() {
 		double headX = getWidth() / 2 - HEAD_RADIUS;
 		double headY = getHeight() / 2 - OFFSET_Y - BODY_LENGTH - HEAD_RADIUS * 2;
