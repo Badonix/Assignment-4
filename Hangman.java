@@ -133,6 +133,7 @@ public class Hangman extends ConsoleProgram {
 		return true;
 	}
 
+	// Getting input until its not single character and parsing it as character
 	private char readUserInput() {
 		String text = "";
 		while (text.length() != 1) {
@@ -141,11 +142,20 @@ public class Hangman extends ConsoleProgram {
 				println("Enter single character");
 			}
 		}
+		
+		// To get character from string with length of 1 we just need to return string's character at 0 index
 		return text.charAt(0);
 	}
 
+	// Choosing random word for user to guess
 	private void chooseRandomWord() {
 		int wordsCount = lexicon.getWordCount();
+		/* Returns random number from 0 to wordsCount
+		 * Note: lexicons words are ordered from 0 to length-1
+		 * nextInt(n) returns random integer from  0 to n-1 (excluding last) 
+		 * so no need for decrementing by 1
+		 * 
+		 */
 		int randomNum = rgen.nextInt(wordsCount);
 		word = lexicon.getWord(randomNum);
 	}
