@@ -58,23 +58,35 @@ public class HangmanCanvas extends GCanvas {
 	    incorrectGuess = new GLabel(incorrectGuesses.toString());
 	    incorrectGuess.setFont("serif-18");
 	    add(incorrectGuess, OFFSET_X, guess.getY() + guess.getAscent() + LABELS_GAP);
-	    if(incorrectGuesses.length() == 1){
-	    	drawHead();
-	    }else if(incorrectGuesses.length() == 2){
-	    	drawBody();
-	    }else if(incorrectGuesses.length() == 3){
-	    	drawLeftHand();
-	    }else if(incorrectGuesses.length() == 4){
-	    	drawRightHand();
-	    }else if(incorrectGuesses.length() == 5){
-	    	drawLeftLeg();
-	    }else if(incorrectGuesses.length() == 6){
-	    	drawRightLeg();
-	    }else if(incorrectGuesses.length() == 7){
-	    	drawLeftFoot();
-	    }else if(incorrectGuesses.length() == 8){
-	    	drawRightFoot();
-	    }
+	    switch (incorrectGuesses.length()) {
+        case 1:
+            drawHead();
+            break;
+        case 2:
+            drawBody();
+            break;
+        case 3:
+            drawLeftHand();
+            break;
+        case 4:
+            drawRightHand();
+            break;
+        case 5:
+            drawLeftLeg();
+            break;
+        case 6:
+            drawRightLeg();
+            break;
+        case 7:
+            drawLeftFoot();
+            break;
+        case 8:
+            drawRightFoot();
+            break;
+        default:
+            // No action needed if all parts are already drawn
+            break;
+    }
 	}
 
 
