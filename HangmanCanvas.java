@@ -56,7 +56,7 @@ public class HangmanCanvas extends GCanvas {
 		double footX = getWidth() / 2 + HIP_WIDTH;
 		double footY = getHeight() / 2 - OFFSET_Y + LEG_LENGTH;
 		GLine foot = new GLine(footX, footY, footX + FOOT_LENGTH, footY);
-
+		add(foot);
 	}
 	private void drawHead() {
 		double headX = getWidth() / 2 - HEAD_RADIUS;
