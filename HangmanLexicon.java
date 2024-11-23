@@ -14,13 +14,16 @@ import java.util.ArrayList;
 import acm.util.*;
 
 public class HangmanLexicon {
+	// Need ArrayList to store words as we don't know the amount of total words
     private ArrayList<String> words;
 
+    private static final String FILE_NAME = "HangmanLexicon.txt";
 	/** Returns the number of words in the lexicon. */
 	public HangmanLexicon() {
+		// Constructor sets words to an empty list
 		words = new ArrayList<>();
 		try {
-			BufferedReader rd = new BufferedReader(new FileReader("HangmanLexicon.txt"));
+			BufferedReader rd = new BufferedReader(new FileReader(FILE_NAME));
 			while(true){
 				String currentWord = rd.readLine();
 				if(currentWord == null){
